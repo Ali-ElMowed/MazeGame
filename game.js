@@ -18,10 +18,25 @@ window.onload = function () {
         for (var i = 0; i < boundries.length; i++) {
             boundries[i].style.backgroundColor = "#eeeeee";
         }
-        
+        for (var i = 0; i < boundries.length; i++) {
+            boundries[i].addEventListener("mouseover", losing,);
+        }
+        end.addEventListener("mouseover",wining , { once: true });
     };
     
+    function losing() {
+        for (var i = 0; i < boundries.length; i++) {
+            var redBg = boundries[i].style.backgroundColor = "red";
+            boundries[i].style.backgroundColor = redBg;
+            boundries[i].removeEventListener("mouseover", losing);
+            end.removeEventListener("mouseover",wining);
+        }
+        score = score - 10;
+        scoreDisplay.style.backgroundColor = "rgb(154 8 230)"
+        scoreDisplay.textContent = "Score:  " + `${score}`;
+        status.textContent = "You Lose!";
 
+    }
     function wining() {
         for (var i = 0; i < boundries.length; i++) {
             var greenBg = boundries[i].style.backgroundColor = "#18f407";
