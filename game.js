@@ -23,7 +23,14 @@ window.onload = function () {
         }
         end.addEventListener("mouseover",wining , { once: true });
     };
-    
+    reset.onclick = function () {
+        for (var i = 0; i < boundries.length; i++) {
+            boundries[i].style.backgroundColor = "#eeeeee";
+        }
+        status.textContent="Begin by moving your mouse over the S.";
+        score = 0;
+        scoreDisplay.textContent = "Score:  " + `${score}`;
+    }
     function losing() {
         for (var i = 0; i < boundries.length; i++) {
             var redBg = boundries[i].style.backgroundColor = "red";
