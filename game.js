@@ -13,6 +13,25 @@ window.onload = function () {
     reset.style.margin = "5px 720px";
     reset.style.padding = "10px 20px";
     document.body.appendChild(reset);
+    start.onclick = function () {
+        status.textContent = "You Can Do It!";
+        for (var i = 0; i < boundries.length; i++) {
+            boundries[i].style.backgroundColor = "#eeeeee";
+        }
+        
+    };
     
+
+    function wining() {
+        for (var i = 0; i < boundries.length; i++) {
+            var greenBg = boundries[i].style.backgroundColor = "#18f407";
+            boundries[i].style.backgroundColor = greenBg;
+            boundries[i].removeEventListener("mouseover", losing);
+        }
+        score = score + 5;
+        scoreDisplay.style.backgroundColor = "rgb(154 8 230)";
+        scoreDisplay.textContent = "Score:  " + `${score}`;
+        status.textContent = "You Win!";
+    }
     
 }
