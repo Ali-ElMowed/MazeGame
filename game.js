@@ -26,6 +26,8 @@ window.onload = function () {
     live.appendChild(livetext);
     live.appendChild(liveTimer);
 
+
+    //Duration section 
     var last = document.createElement("div");
     var lasttext = document.createElement("h3");
     lasttext.innerHTML = "last";
@@ -58,7 +60,7 @@ window.onload = function () {
     var count = 0;
     var count1 = 0;
 
-
+    //Timer function
     var check = null;
     function printDuration() {
         if (check == null) {
